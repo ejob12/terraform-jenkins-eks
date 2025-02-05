@@ -26,7 +26,6 @@ module "vpc" {
     "kubernetes.io/cluster/my-eks-cluster" = "shared"
     "kubernetes.io/role/internal-elb"      = 1
   }
-
 }
 
 module "eks" {
@@ -47,6 +46,7 @@ module "eks" {
       desired_size = 2
 
       instance_type = ["t2.small"]
+      public_ip     = true
     }
   }
 
